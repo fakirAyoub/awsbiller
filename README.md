@@ -17,5 +17,5 @@ $ Launcher.go --startDate yyyy-MM-dd --endDate yyyy-MM-dd --granularity=DAILY/MO
 ## List of Metrics can be found here:
 
 
-* [Cost and Usage](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html): Cost and Usage Metric Values
-* [Cost Forecast](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html): Cost Forecast Metric Values
+* [Cost and Usage](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html)
+* [Cost Forecast](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html)
