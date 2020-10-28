@@ -9,9 +9,9 @@ A set of go scripts allowing you to get actual costs and forecasts from the AWS 
 $ Launcher.go --startDate yyyy-MM-dd --endDate yyyy-MM-dd --granularity=DAILY/MONTHLY/YEARLY --costType costExplorer --metrics AMORTIZED_COST --metrics <another_metric_here>
 ```
 
-## Cost Explorer to get forecast metrics:
+## Cost Forecast to get forecast metrics:
 ```sh
-$ Launcher.go --startDate 2020-10-10 --endDate 2020-10-11 --granularity=DAILY --costType costExplorer --metric AMORTIZED_COST
+$ Launcher.go --startDate yyyy-MM-dd --endDate yyyy-MM-dd --granularity=DAILY/MONTHLY/YEARLY --costType costForecast --metric AMORTIZED_COST
 ```
 
 ## List of Metrics can be found here:
