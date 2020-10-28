@@ -27,5 +27,5 @@ func costForecast(granularity *string, startDate *string, endDate *string, metri
 		fmt.Println("Couldn't retrieve metrics: %v", err)
 	}
 
-	fmt.Println("Cost Report:", result.ForecastResultsByTime)
+	fmt.Println("Cost Forecast Report:", result.ForecastResultsByTime)
 }
