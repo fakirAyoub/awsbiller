@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 type arrayFlags []string
 
@@ -33,7 +34,12 @@ func main() {
 		fmt.Println("Cost Forecast: ")
 		costForecast(granularityArg, startDateArg, endDateArg, metricArg)
 	} else {
-		fmt.Errorf("Bad argument: ", *typeArg)
+		exitErrorf("Bad Argument!, %v", *typeArg)
 	}
 
+}
+
+func exitErrorf(msg string, args ...interface{}) {
+	fmt.Fprintf(os.Stderr, msg+"\n", args...)
+	os.Exit(1)
 }
