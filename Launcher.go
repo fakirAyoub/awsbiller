@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 )
 type arrayFlags []string
 
@@ -18,7 +19,7 @@ var metricsArgArray arrayFlags
 func main() {
 	typeArg := flag.String("costType", "", "Choose between the actual cost of your services or a forecast")
 	metricArg := flag.String("metric", "", "Metrics to get from the report")
-	flag.Var(&metricsArgArray, "metrics", "Some description for this param.")
+	flag.Var(&metricsArgArray, "metrics", "Metrics to be set for the cost explorer. When using more than one metrics, then: --metrics m1 --metrics m2")
 
 	granularityArg := flag.String("granularity", "", "Granularity - MONTHLY, DAILY or YEARLY")
 	startDateArg := flag.String("startDate", "", "Start Date to be used for the date range to get costs")
@@ -33,7 +34,12 @@ func main() {
 		fmt.Println("Cost Forecast: ")
 		costForecast(granularityArg, startDateArg, endDateArg, metricArg)
 	} else {
-		fmt.Errorf("Bad argument: ", *typeArg)
+		exitErrorf("Bad Argument!, %v", *typeArg)
 	}
 
+}
+
+func exitErrorf(msg string, args ...interface{}) {
+	fmt.Fprintf(os.Stderr, msg+"\n", args...)
+	os.Exit(1)
 }
